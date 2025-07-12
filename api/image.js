@@ -11,6 +11,9 @@ export default async function handler(req, res) {
     const HEIGHT = parseInt(req.query.height) || 1792;
     const NF = parseFloat(req.query.nf) || 3.0;
 
+    const CENTRE_X = Math.floor(WIDTH / 2);
+    const CENTRE_Y = Math.floor(HEIGHT / 2);
+
     const canvas = createCanvas(WIDTH, HEIGHT);
     const ctx = canvas.getContext('2d');
     const imageData = ctx.createImageData(WIDTH, HEIGHT);
