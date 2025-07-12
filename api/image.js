@@ -1,11 +1,5 @@
 import { createCanvas } from 'canvas';
 
-// const WIDTH = 828;
-// const HEIGHT = 1792;
-// const CENTRE_X = Math.floor(WIDTH / 2);
-// const CENTRE_Y = Math.floor(HEIGHT / 2);
-// const NF = 3.0;
-
 export default async function handler(req, res) {
     const WIDTH = parseInt(req.query.width) || 828;
     const HEIGHT = parseInt(req.query.height) || 1792;
@@ -107,11 +101,23 @@ export default async function handler(req, res) {
         const total = WIDTH * HEIGHT;
 
         while (placed < total) {
-            for (let i = 0; i < distance; i++) y--, placed += place(x, y, NF);
-            for (let i = 0; i < distance; i++) x++, placed += place(x, y, NF);
+            for (let i = 0; i < distance; i++) {
+                y--;
+                placed += place(x, y, NF);
+            }
+            for (let i = 0; i < distance; i++) {
+                x++;
+                placed += place(x, y, NF);
+            }
             distance++;
-            for (let i = 0; i < distance; i++) y++, placed += place(x, y, NF);
-            for (let i = 0; i < distance; i++) x--, placed += place(x, y, NF);
+            for (let i = 0; i < distance; i++) {
+                y++;
+                placed += place(x, y, NF);
+            }
+            for (let i = 0; i < distance; i++) {
+                x--;
+                placed += place(x, y, NF);
+            }
             distance++;
         }
         ctx.putImageData(imageData, 0, 0);
