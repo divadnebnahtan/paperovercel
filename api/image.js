@@ -1,8 +1,8 @@
 import { createCanvas } from 'canvas';
 
 export default async function handler(req, res) {
-    const WIDTH = parseInt(req.query.width) || 828;
-    const HEIGHT = parseInt(req.query.height) || 1792;
+    const WIDTH = parseInt(req.query.w) || 828;
+    const HEIGHT = parseInt(req.query.h) || 1792;
     const NF = parseFloat(req.query.nf) || 3.0;
 
     const CENTRE_X = Math.floor(WIDTH / 2);
