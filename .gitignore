@@ -1,3 +1,63 @@
 node_modules
 .idea
 package-lock.json
+
+# GitHub project hygiene
+# Local tools, caches, and credentials
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*.tmp
+*.log
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+.local/
+*.local
+*.pem
+*.key
+id_rsa
+id_ed25519
+.cache
+.cache/
+.spotify-cache*
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+node_modules/
+*.tsbuildinfo
+coverage/
+# JavaScript build output and hosting state
+/.next/
+/.nuxt/
+/.svelte-kit/
+/.output/
+/dist/
+/build/
+/out/
+.parcel-cache/
+.turbo/
+.vercel/
+.netlify/
+npm-debug.log*
+yarn-error.log*
+# Jekyll output (keep Gemfile.lock)
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
+/.sass-cache/
+/vendor/bundle/
+# Always publish this project policy
+!/.gitignore
